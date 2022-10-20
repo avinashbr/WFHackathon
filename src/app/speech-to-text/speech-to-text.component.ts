@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { templateModel } from '../models/template.model';
 import { VoiceRecognitionService } from '../services/voice-recognition.service';
 
 @Component({
@@ -8,10 +9,13 @@ import { VoiceRecognitionService } from '../services/voice-recognition.service';
 })
 export class SpeechToTextComponent implements OnInit {
   recordedMessage: String = '';
-  templateList: String[] = [
-    'Transfer money from account1 to account2',
-    'Check account balance in account account1'
+  templateList: templateModel[] = [
+    { name: 'Transfer money from account1 to account2' },
+    { name: 'Check account balance in account account1' }
   ];
+  displayedColumns: string[] = ['name'];
+  listening:boolean=false;
+
 
   constructor(
     public service: VoiceRecognitionService
@@ -20,13 +24,16 @@ export class SpeechToTextComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   startService() {
+    this.listening=true;
     this.service.start()
   }
 
   stopService() {
+    this.listening=false;
     this.recordedMessage = this.service.text;
     this.service.stop()
   }

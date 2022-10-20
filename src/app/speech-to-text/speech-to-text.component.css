@@ -1,3 +1,6 @@
 .mic:active{
 color: red;
 }
+.container{
+    margin: 50px;
+}
