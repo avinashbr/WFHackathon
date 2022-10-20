@@ -1,7 +1,7 @@
 <div style="margin: 100px;">
     <h1>Voice recognition</h1>
-    <button style="margin: 10px;" (mousedown)="startService()" (mouseup)="stopService()">
+    <button mat-fab color="primary" (mousedown)="startService()" (mouseup)="stopService()">
         <mat-icon class="mic">mic</mat-icon>
-    </button>
+      </button>
     <p>{{service.text}}</p>
 </div>

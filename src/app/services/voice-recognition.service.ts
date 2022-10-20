@@ -28,6 +28,7 @@ export class VoiceRecognitionService {
   }
 
   start() {
+    this.text='';
     this.isStoppedSpeechRecog = false;
     this.recognition.start();
     console.log("Speech recognition started")
@@ -49,7 +50,7 @@ export class VoiceRecognitionService {
   }
 
   wordConcat() {
-    this.text = this.text + ' ' + this.tempWords + '.';
+    this.text = this.text + ' ' + this.tempWords;
     this.tempWords = '';
   }
 }
