@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { templateModel } from '../models/template.model';
 import { VoiceRecognitionService } from '../services/voice-recognition.service';
 
@@ -10,11 +11,13 @@ import { VoiceRecognitionService } from '../services/voice-recognition.service';
 export class SpeechToTextComponent implements OnInit {
   recordedMessage: String = '';
   templateList: templateModel[] = [
-    { name: 'Transfer money from account1 to account2' },
-    { name: 'Check account balance in account account1' }
+    { id:1,name: 'Transfer money from account1 to account2' },
+    { id:1,name: 'Check account balance in account account1' }
   ];
   displayedColumns: string[] = ['name'];
   listening: boolean = false;
+  value:string = 'foo';
+  control = new FormControl(this.value);
 
 
   constructor(public service: VoiceRecognitionService) {
@@ -23,6 +26,16 @@ export class SpeechToTextComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+  update(event:any) {
+    console.log(event);
+    // this.value = 'this.control?.value;'
+  }
+
+  cancel(index:number) {
+    console.log(index);
+
+    // this.control.setValue(this.value);
   }
 
   startService() {

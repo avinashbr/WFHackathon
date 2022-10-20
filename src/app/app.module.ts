@@ -8,7 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
-
+import { EditableModule } from '@ngneat/edit-in-place';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +25,10 @@ import { MatTableModule } from '@angular/material/table';
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    EditableModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

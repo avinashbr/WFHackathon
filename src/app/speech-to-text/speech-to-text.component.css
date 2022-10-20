@@ -12,3 +12,8 @@ color: red;
 .listned-text{
     color: blue;
 }
+.mat-form-field {
+    display: inline;
+    position: relative;
+    text-align: left;
+}

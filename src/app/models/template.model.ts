@@ -1,3 +1,4 @@
 export interface templateModel {
-    name: string;
-  }
+  id: number;
+  name: string;
+}
