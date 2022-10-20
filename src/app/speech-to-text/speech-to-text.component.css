@@ -3,4 +3,12 @@ color: red;
 }
 .container{
     margin: 50px;
+    display: flex;
+    float: left;
+}
+.template{
+    margin-left: 50px;
+}
+.listned-text{
+    color: blue;
 }
