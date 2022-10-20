@@ -1,7 +1,9 @@
 <div style="margin: 100px;">
-    <h1>Voice recognition</h1>
-    <button mat-fab color="primary" (mousedown)="startService()" (mouseup)="stopService()">
+    <h1>Plase say the command</h1>
+    <button mat-fab color="primary" class="mic" (mousedown)="startService()" (mouseup)="stopService()" title="Hold the button to record">
         <mat-icon class="mic">mic</mat-icon>
       </button>
+    <br>
     <p>{{service.text}}</p>
+    <p *ngIf="recordedMessage.length>0">Command: {{recordedMessage}}</p>
 </div>
