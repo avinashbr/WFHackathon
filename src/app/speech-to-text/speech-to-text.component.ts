@@ -8,7 +8,7 @@ import { VoiceRecognitionService } from '../services/voice-recognition.service';
   styleUrls: ['./speech-to-text.component.css']
 })
 export class SpeechToTextComponent implements OnInit {
-  realtimeSpeech: string = '';
+  recordedMessage: String = '';
   templateList: templateModel[] = [
     { name: 'Transfer money from account1 to account2' },
     { name: 'Check account balance in account account1' }
