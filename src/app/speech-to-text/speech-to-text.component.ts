@@ -54,9 +54,9 @@ export class SpeechToTextComponent implements OnInit {
   }
 
   update(editedVal: string) {
-    console.log(editedVal);
+    console.log(editedVal.trim);
     if(editedVal.length>0){
-    this.service.processTemplate(editedVal).subscribe((data:processTemplate)=>{
+    this.service.processTemplate(editedVal.trim()).subscribe((data:processTemplate)=>{
       console.log(data)
       let id = Math.max(...this.recentlyExecutedCommands.map(o => o.id));
       this.snackBar.open(data.statusMessage, 'Success', {
