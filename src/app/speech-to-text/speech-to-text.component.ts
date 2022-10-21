@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { templateModel } from '../models/template.model';
 import { VoiceRecognitionService } from '../services/voice-recognition.service';
 
@@ -26,7 +27,7 @@ export class SpeechToTextComponent implements OnInit {
   recentlyExecutedCommands:templateModel[]=[];
 
 
-  constructor(public service: VoiceRecognitionService) {
+  constructor(public service: VoiceRecognitionService,public snackBar: MatSnackBar) {
     this.service.init()
   }
 
@@ -35,6 +36,9 @@ export class SpeechToTextComponent implements OnInit {
   }
   update(editedVal: string) {
     console.log(editedVal);
+    this.snackBar.open(editedVal, 'Success', {
+      duration: 5000,
+   });
     // this.value = 'this.control?.value;'
     this.recentlyExecutedCommands.push({id:1,name:editedVal});
     this.recentlyExecutedCommands=[...this.recentlyExecutedCommands];

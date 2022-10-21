@@ -36,7 +36,8 @@ import { HeaderComponent } from './header/header.component';
     ReactiveFormsModule,
     FormsModule,
     MatSnackBarModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
