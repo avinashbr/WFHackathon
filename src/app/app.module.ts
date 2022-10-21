@@ -9,15 +9,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { EditableModule } from '@ngneat/edit-in-place';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { HeaderComponent } from './header/header.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SpeechToTextComponent
+    SpeechToTextComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditableModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

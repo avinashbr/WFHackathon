@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container">
     <div class="voice">
         <h1>Plase say the command</h1>
@@ -8,8 +9,8 @@
         <br>
         <p *ngIf="listening">listening..</p>
         <mat-form-field class="example-full-width" appearance="fill">
-        <input matInput class="listned-text" value={{service.text}} #recognizedText>
-    </mat-form-field>
+            <input matInput class="listned-text" value={{service.text}} #recognizedText>
+        </mat-form-field>
         <button mat-raised-button color="primary" (click)="update(recognizedText.value)">Submit</button>
     </div>
     <div class="template">
@@ -20,10 +21,11 @@
                     <editable>
                         <ng-template viewMode>{{ template.name }}</ng-template>
                         <ng-template editMode>
-                            <button mat-raised-button color="primary" editableOnSave (click)="update(editedVal.value)">Submit</button>
+                            <button mat-raised-button color="primary" editableOnSave
+                                (click)="update(editedVal.value)">Submit</button>
                             <button mat-raised-button color="warn" editableOnCancel>Cancel</button>
-                            <mat-form-field style="cursor: pointer;"class="example-full-width" appearance="fill">
-                                <input matInput editableOnEnter editableOnEscape value={{template.name}} #editedVal/>
+                            <mat-form-field style="cursor: pointer;" class="example-full-width" appearance="fill">
+                                <input matInput editableOnEnter editableOnEscape value={{template.name}} #editedVal />
                             </mat-form-field>
                         </ng-template>
                     </editable>
