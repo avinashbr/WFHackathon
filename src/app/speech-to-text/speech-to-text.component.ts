@@ -59,14 +59,14 @@ export class SpeechToTextComponent implements OnInit {
     this.service.processTemplate(editedVal).subscribe((data:processTemplate)=>{
       console.log(data)
       let id = Math.max(...this.recentlyExecutedCommands.map(o => o.id));
-      this.snackBar.open(editedVal, 'Success', {
+      this.snackBar.open(data.statusMessage, 'Success', {
         duration: 5000,
       });
       this.recentlyExecutedCommands.push({ id: id, templateName: editedVal });
       this.recentlyExecutedCommands = [...this.recentlyExecutedCommands];
     },err=>{
       console.log(err)
-      this.snackBar.open('Something wrong!', 'Error', {
+      this.snackBar.open(err.error, 'Error', {
         duration: 5000,
       });
     })

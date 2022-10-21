@@ -1,3 +1,3 @@
 export interface processTemplate {
-    templateName:string;
+    statusMessage:string;
   }
