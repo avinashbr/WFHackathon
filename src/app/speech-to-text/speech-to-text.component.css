@@ -1,19 +1,29 @@
-.mic:active{
-color: red;
+.mic:active {
+    color: red;
 }
-.container{
+
+.container {
     margin: 50px;
     display: flex;
     float: left;
 }
-.template{
+
+.template {
     margin-left: 50px;
 }
-.listned-text{
+
+.listned-text {
     color: blue;
 }
+
 .mat-form-field {
     display: inline;
     position: relative;
     text-align: left;
+}
+
+.header {
+    font-weight: 500;
+    font-size: 23px;
+    color: #3F51CD;
 }
