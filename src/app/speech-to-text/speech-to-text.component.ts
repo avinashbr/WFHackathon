@@ -18,6 +18,7 @@ export class SpeechToTextComponent implements OnInit {
   listening: boolean = false;
   value:string = 'foo';
   control = new FormControl(this.value);
+  updatedValue:string='';
 
 
   constructor(public service: VoiceRecognitionService) {
@@ -27,8 +28,8 @@ export class SpeechToTextComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  update(event:any) {
-    console.log(event);
+  update(editedVal:string) {
+    console.log(editedVal);
     // this.value = 'this.control?.value;'
   }
 
