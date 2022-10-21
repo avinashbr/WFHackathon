@@ -15,6 +15,12 @@ Click and Hold the mic button to start the voice recognition
 
 ![image](https://user-images.githubusercontent.com/5214961/197135307-382f90a8-b757-4f3d-8f63-1df64e9319fa.png)
 
+Sample Inputs:
+open Rahul profile in client management
+
+what is the balance of rahul savings account
+
+
 Application will start use chrome mic and keep on listening to the user input
 
 ![image](https://user-images.githubusercontent.com/5214961/197135720-b2775fdc-d4a2-4762-ba34-bec516a1383b.png)
