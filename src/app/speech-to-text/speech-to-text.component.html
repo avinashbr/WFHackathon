@@ -22,7 +22,7 @@
                         <ng-template editMode>
                             <button mat-raised-button color="primary" editableOnSave (click)="update(editedVal.value)">Submit</button>
                             <button mat-raised-button color="warn" editableOnCancel>Cancel</button>
-                            <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-form-field style="cursor: pointer;"class="example-full-width" appearance="fill">
                                 <input matInput editableOnEnter editableOnEscape value={{template.name}} #editedVal/>
                             </mat-form-field>
                         </ng-template>
