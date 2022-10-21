@@ -49,3 +49,7 @@ User can click on the existing template and edit the fields as per requirement a
 
 ![image](https://user-images.githubusercontent.com/5214961/197137126-3ce89294-2179-4d9e-8460-b10e14087f65.png)
 
+Sample Screenshot:
+
+![image](https://user-images.githubusercontent.com/5214961/197197660-1d76343f-39b4-4d80-96d1-ae7b23e1a352.png)
+
