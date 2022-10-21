@@ -7,8 +7,10 @@
         </button>
         <br>
         <p *ngIf="listening">listening..</p>
-        <p class="listned-text">{{service.text}}</p>
-        <button *ngIf="recordedMessage!=''" mat-raised-button color="primary">Submit</button>
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput class="listned-text" value={{service.text}} #recognizedText>
+    </mat-form-field>
+        <button mat-raised-button color="primary" (click)="update(recognizedText.value)">Submit</button>
     </div>
     <div class="template">
         <table mat-table [dataSource]="templateList" class="mat-elevation-z8">
