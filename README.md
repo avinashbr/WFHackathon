@@ -6,6 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+Please run the https://github.com/avinashbr/faProductivity spring boot application for the backend services
 
 # How to use the application
 Open the application on chrome browse
