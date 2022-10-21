@@ -69,7 +69,7 @@ export class SpeechToTextComponent implements OnInit {
       this.recentlyExecutedCommands = [...this.recentlyExecutedCommands];
     },err=>{
       console.log(err)
-      this.snackBar.open(editedVal, 'Error', {
+      this.snackBar.open('Not able to reach the API', 'Error', {
         duration: 5000,
       });
     })
