@@ -23,6 +23,7 @@ export class SpeechToTextComponent implements OnInit {
   value: string = 'foo';
   control = new FormControl(this.value);
   updatedValue: string = '';
+  recentlyExecutedCommands:templateModel[]=[];
 
 
   constructor(public service: VoiceRecognitionService) {
@@ -35,6 +36,8 @@ export class SpeechToTextComponent implements OnInit {
   update(editedVal: string) {
     console.log(editedVal);
     // this.value = 'this.control?.value;'
+    this.recentlyExecutedCommands.push({id:1,name:editedVal});
+    this.recentlyExecutedCommands=[...this.recentlyExecutedCommands];
   }
 
   cancel(index: number) {
