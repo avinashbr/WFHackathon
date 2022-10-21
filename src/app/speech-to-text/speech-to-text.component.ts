@@ -38,14 +38,17 @@ export class SpeechToTextComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(NewTemplateComponent, {
-      width: '250px',
+      width: '500px',
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result:string) => {
       console.log(result);
-      let id = Math.max(...this.templateList.map(o => o.id));
-      this.templateList.push({id:id,name:result});
-      this.templateList=[...this.templateList];
+      if(result.length>0){
+        let id = Math.max(...this.templateList.map(o => o.id));
+        this.templateList.push({id:id,name:result});
+        this.templateList=[...this.templateList];
+      }
+     
     });
   }
   
@@ -54,7 +57,6 @@ export class SpeechToTextComponent implements OnInit {
     this.snackBar.open(editedVal, 'Success', {
       duration: 5000,
    });
-    // this.value = 'this.control?.value;'
     let id = Math.max(...this.recentlyExecutedCommands.map(o => o.id));
 
     this.recentlyExecutedCommands.push({id:id,name:editedVal});
@@ -63,8 +65,6 @@ export class SpeechToTextComponent implements OnInit {
 
   cancel(index: number) {
     console.log(index);
-
-    // this.control.setValue(this.value);
   }
 
   startService() {
