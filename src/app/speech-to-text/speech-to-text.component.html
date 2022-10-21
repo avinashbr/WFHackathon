@@ -18,7 +18,7 @@
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef> Predeifined Templates <button mat-mini-fab (click)="openDialog()">+</button></th>
                 <td mat-cell *matCellDef="let template;let i = index;">
-                    <editable>
+                    <editable style="cursor: pointer">
                         <ng-template viewMode>{{ template.name }}</ng-template>
                         <ng-template editMode>
                             <button mat-raised-button color="primary" editableOnSave
@@ -29,6 +29,7 @@
                             </mat-form-field>
                         </ng-template>
                     </editable>
+                    <button style="float:right;" color="warn" (click)="removeTemplate(template)" mat-mini-fab>-</button>
                 </td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
