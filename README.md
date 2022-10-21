@@ -31,3 +31,11 @@ On click of Submit button, command will be passed to spring boot application to 
 All successful action will be visible in the Recently executed command section
 
 ![image](https://user-images.githubusercontent.com/5214961/197136591-5c697934-dfdb-4b38-8a9d-14dec977df8e.png)
+
+If user wants to type the commands, then user can use the predined temmplate available in the application.
+User can add and remove the templates as per the requirement.
+![image](https://user-images.githubusercontent.com/5214961/197136901-24f80f0e-13be-44bf-82c9-29e4f89303c5.png)
+
+User can click on the existing template and edit the fields as per requirement and Submit to backend for further processing.
+![image](https://user-images.githubusercontent.com/5214961/197137126-3ce89294-2179-4d9e-8460-b10e14087f65.png)
+
