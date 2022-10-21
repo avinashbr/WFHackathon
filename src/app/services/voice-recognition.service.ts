@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { Observable, observable } from 'rxjs';
+import { processTemplate } from '../models/processTemplate.mode';
+import { templateModel } from '../models/template.model';
 declare var webkitSpeechRecognition: any;
 
 @Injectable({
@@ -11,7 +14,7 @@ export class VoiceRecognitionService {
   public text = '';
   tempWords:string='';
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
   init() {
 
@@ -53,5 +56,16 @@ export class VoiceRecognitionService {
   wordConcat() {
     this.text = this.text + ' ' + this.tempWords;
     this.tempWords = '';
+  }
+
+  getTemplate():Observable<templateModel[]>{
+    return this.httpClient.post<templateModel[]>('http://localhost:8080/command/listTemplates',{});
+  }
+
+  processTemplate(templateName:string):Observable<processTemplate>{
+    var postData={
+      "templateName":templateName
+  }
+    return this.httpClient.post<processTemplate>('http://localhost:8080/command/processTemplate',postData);
   }
 }

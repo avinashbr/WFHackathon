@@ -1,4 +1,5 @@
 export interface templateModel {
   id: number;
-  name: string;
+  templateName: string;
+  regex?:string
 }
