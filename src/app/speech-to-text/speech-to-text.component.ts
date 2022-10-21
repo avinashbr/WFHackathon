@@ -54,13 +54,16 @@ export class SpeechToTextComponent implements OnInit {
 
   update(editedVal: string) {
     console.log(editedVal);
-    this.snackBar.open(editedVal, 'Success', {
-      duration: 5000,
-    });
+    
     let id = Math.max(...this.recentlyExecutedCommands.map(o => o.id));
+    if(editedVal.length>0){
+      this.snackBar.open(editedVal, 'Success', {
+        duration: 5000,
+      });
+      this.recentlyExecutedCommands.push({ id: id, name: editedVal });
+      this.recentlyExecutedCommands = [...this.recentlyExecutedCommands];
+    }
 
-    this.recentlyExecutedCommands.push({ id: id, name: editedVal });
-    this.recentlyExecutedCommands = [...this.recentlyExecutedCommands];
   }
 
   cancel(index: number) {
