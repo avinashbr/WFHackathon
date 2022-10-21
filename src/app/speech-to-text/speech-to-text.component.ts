@@ -24,9 +24,6 @@ export class SpeechToTextComponent implements OnInit {
   ];
   displayedColumns: string[] = ['name'];
   listening: boolean = false;
-  value: string = 'foo';
-  control = new FormControl(this.value);
-  updatedValue: string = '';
   recentlyExecutedCommands: templateModel[] = [];
 
 
@@ -69,7 +66,7 @@ export class SpeechToTextComponent implements OnInit {
       this.recentlyExecutedCommands = [...this.recentlyExecutedCommands];
     },err=>{
       console.log(err)
-      this.snackBar.open('Not able to reach the API', 'Error', {
+      this.snackBar.open(err, 'Error', {
         duration: 5000,
       });
     })
