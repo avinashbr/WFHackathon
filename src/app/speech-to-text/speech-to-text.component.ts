@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { templateModel } from '../models/template.model';
+import { NewTemplateComponent } from '../new-template/new-template.component';
 import { VoiceRecognitionService } from '../services/voice-recognition.service';
 
 @Component({
@@ -27,20 +29,35 @@ export class SpeechToTextComponent implements OnInit {
   recentlyExecutedCommands:templateModel[]=[];
 
 
-  constructor(public service: VoiceRecognitionService,public snackBar: MatSnackBar) {
+  constructor(public service: VoiceRecognitionService,public snackBar: MatSnackBar,public dialog: MatDialog) {
     this.service.init()
   }
 
   ngOnInit(): void {
 
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(NewTemplateComponent, {
+      width: '250px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      let id = Math.max(...this.templateList.map(o => o.id));
+      this.templateList.push({id:id,name:result});
+      this.templateList=[...this.templateList];
+    });
+  }
+  
   update(editedVal: string) {
     console.log(editedVal);
     this.snackBar.open(editedVal, 'Success', {
       duration: 5000,
    });
     // this.value = 'this.control?.value;'
-    this.recentlyExecutedCommands.push({id:1,name:editedVal});
+    let id = Math.max(...this.recentlyExecutedCommands.map(o => o.id));
+
+    this.recentlyExecutedCommands.push({id:id,name:editedVal});
     this.recentlyExecutedCommands=[...this.recentlyExecutedCommands];
   }
 
@@ -60,5 +77,6 @@ export class SpeechToTextComponent implements OnInit {
     this.recordedMessage = this.service.text;
     this.service.stop()
   }
+  
 
 }

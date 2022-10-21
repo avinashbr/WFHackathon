@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HeaderComponent } from './header/header.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { NewTemplateComponent } from './new-template/new-template.component';
 
 
 
@@ -22,7 +24,8 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
     SpeechToTextComponent,
-    HeaderComponent
+    HeaderComponent,
+    NewTemplateComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
